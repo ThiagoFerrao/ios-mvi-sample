@@ -19,20 +19,17 @@ class RxInteractor<Command, Mutation, State>: RxInteracting {
         self.initialState = initialState
     }
 
-    let initialState: State
+    final let initialState: State
 
-    var inputCommand: Observable<Command> = .empty()
+    final var inputCommand: Observable<Command> = .empty()
     
-    var outputState: Observable<State> {
+    final var outputState: Observable<State> {
         let currentState = PublishSubject<State>()
 
         return inputCommand
             .withLatestFrom(currentState) { ($0, $1) }
             .flatMap { [weak self] command, state -> Observable<Mutation> in
-                guard let self = self else {
-                    return .empty()
-                }
-                return self.mutate(command: command, state: state)
+                self?.mutate(command: command, state: state) ?? .empty()
             }
             .scan(initialState, accumulator: reduce)
             .startWith(initialState)

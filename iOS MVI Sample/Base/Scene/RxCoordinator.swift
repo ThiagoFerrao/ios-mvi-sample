@@ -10,33 +10,33 @@ protocol RxCoordinating: class {
 
 class RxCoordinator: RxCoordinating {
 
-    weak var viewController: UIViewController?
+    final weak var viewController: UIViewController?
 
-    func present(_ viewControllerToPresent: UIViewController) {
+    final func present(_ viewControllerToPresent: UIViewController) {
         execute { [weak self] in
             self?.viewController?.present(viewControllerToPresent, animated: true, completion: nil)
         }
     }
 
-    func dismiss() {
+    final func dismiss() {
         execute { [weak self] in
             self?.viewController?.dismiss(animated: true, completion: nil)
         }
     }
 
-    func push(_ viewControllerToPush: UIViewController) {
+    final func push(_ viewControllerToPush: UIViewController) {
         execute { [weak self] in
             self?.viewController?.navigationController?.pushViewController(viewControllerToPush, animated: true)
         }
     }
 
-    func pop() {
+    final func pop() {
         execute { [weak self] in
             self?.viewController?.navigationController?.popViewController(animated: true)
         }
     }
 
-    private func execute(handler: @escaping (() -> Void)) {
+    final private func execute(handler: @escaping (() -> Void)) {
         if Thread.current.isMainThread {
             handler()
             return

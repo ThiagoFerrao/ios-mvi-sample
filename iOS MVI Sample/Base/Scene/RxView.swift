@@ -26,15 +26,15 @@ class RxView<Command, ViewModel: Equatable, StatusView: UIView>: UIViewControlle
         outputCommand.onCompleted()
     }
 
-    let statusView = StatusView()
+    final let statusView = StatusView()
 
-    let inputViewModel: Observable<ViewModel>
+    final let inputViewModel: Observable<ViewModel>
 
-    let outputCommand = PublishSubject<Command>()
+    final let outputCommand = PublishSubject<Command>()
 
-    let disposeBag = DisposeBag()
+    final let disposeBag = DisposeBag()
 
-    override func viewDidLoad() {
+    final override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()

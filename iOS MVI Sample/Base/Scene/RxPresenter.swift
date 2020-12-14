@@ -12,9 +12,9 @@ protocol RxPresenting: class {
 
 class RxPresenter<State, ViewModel>: RxPresenting {
 
-    var inputState: Observable<State> = .empty()
+    final var inputState: Observable<State> = .empty()
 
-    var outputViewModel: Observable<ViewModel> {
+    final var outputViewModel: Observable<ViewModel> {
         return inputState
             .compactMap { [weak self] in
                 self?.stateToViewModel(state: $0)

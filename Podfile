@@ -16,8 +16,12 @@ target 'iOS MVI Sample' do
     pod 'RxTest'
     pod 'RxBlocking'
   end
+end
 
-  target 'iOS MVI SampleUITests' do
-    # Pods for testing
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+    end
   end
 end
