@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         options: UIScene.ConnectionOptions
     ) -> UISceneConfiguration {
         return UISceneConfiguration(
-            name: "Default Configuration",
+            name: GenString.AppDelegate.UISceneConfiguration.default,
             sessionRole: connectingSceneSession.role
         )
     }

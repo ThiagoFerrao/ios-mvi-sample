@@ -10,6 +10,8 @@
 		9002BCB72587D05300A3649F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002BCB62587D05300A3649F /* Network.swift */; };
 		9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002BCBC2587DDE900A3649F /* OptionalExtension.swift */; };
 		9015C7F025880CDA00E3C969 /* DebugChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015C7EF25880CDA00E3C969 /* DebugChecker.swift */; };
+		90645693258AF2F800D2117B /* GenAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645691258AF2F800D2117B /* GenAsset.swift */; };
+		90645694258AF2F800D2117B /* GenString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645692258AF2F800D2117B /* GenString.swift */; };
 		909A792025869163008E444D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A791F25869163008E444D /* AppDelegate.swift */; };
 		909A792225869163008E444D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A792125869163008E444D /* SceneDelegate.swift */; };
 		909A792425869163008E444D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A792325869163008E444D /* HomeViewController.swift */; };
@@ -48,13 +50,16 @@
 		9002BCB62587D05300A3649F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9002BCBC2587DDE900A3649F /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
 		9015C7EF25880CDA00E3C969 /* DebugChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugChecker.swift; sourceTree = "<group>"; };
+		90645691258AF2F800D2117B /* GenAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenAsset.swift; sourceTree = "<group>"; };
+		90645692258AF2F800D2117B /* GenString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenString.swift; sourceTree = "<group>"; };
+		908DF791258AF428005C7D6F /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		909A791C25869163008E444D /* iOS MVI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909A791F25869163008E444D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		909A792125869163008E444D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		909A792325869163008E444D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		909A792825869164008E444D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		909A792B25869164008E444D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		909A792D25869164008E444D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		909A792D25869164008E444D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "iOS MVI Sample/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		909A793225869164008E444D /* iOS MVI SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS MVI SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909A793625869164008E444D /* iOS_MVI_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MVI_SampleTests.swift; sourceTree = "<group>"; };
 		909A793825869164008E444D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		90C9FC082587A6D900892BA4 /* RxFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxFactory.swift; sourceTree = "<group>"; };
 		90DB5F7C258810F100484694 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		90DB5F80258816D400484694 /* NetworkInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptor.swift; sourceTree = "<group>"; };
+		90F27417258AEA3D005FEEDD /* Base.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Base.strings; sourceTree = "<group>"; };
 		B58C86E26086B55044A4F891 /* Pods-iOS MVI Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI Sample.debug.xcconfig"; path = "Target Support Files/Pods-iOS MVI Sample/Pods-iOS MVI Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB0E0ED199D3D43BB29EC35 /* Pods-iOS MVI SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI SampleTests.release.xcconfig"; path = "Target Support Files/Pods-iOS MVI SampleTests/Pods-iOS MVI SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2972AD35E5975B9A1D77346 /* Pods_iOS_MVI_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MVI_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +141,24 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		90645675258AEF5E00D2117B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				90645691258AF2F800D2117B /* GenAsset.swift */,
+				90645692258AF2F800D2117B /* GenString.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		908DF78C258AF3BE005C7D6F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				908DF791258AF428005C7D6F /* swiftgen.yml */,
+				909A792D25869164008E444D /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		909A791325869163008E444D = {
 			isa = PBXGroup;
 			children = (
@@ -158,12 +182,13 @@
 		909A791E25869163008E444D /* iOS MVI Sample */ = {
 			isa = PBXGroup;
 			children = (
-				9002BCBB2587DDD800A3649F /* Util */,
-				90B05F602586B69800BDAD3A /* Base */,
 				90B05F4E2586B49B00BDAD3A /* App */,
+				90B05F602586B69800BDAD3A /* Base */,
 				90B05F4F2586B4AE00BDAD3A /* Home */,
-				909A792825869164008E444D /* Assets.xcassets */,
-				909A792D25869164008E444D /* Info.plist */,
+				9002BCBB2587DDD800A3649F /* Util */,
+				90645675258AEF5E00D2117B /* Generated */,
+				90DD14B0258AE83000AFEAA1 /* Resources */,
+				908DF78C258AF3BE005C7D6F /* Supporting Files */,
 			);
 			path = "iOS MVI Sample";
 			sourceTree = "<group>";
@@ -182,7 +207,6 @@
 			children = (
 				909A791F25869163008E444D /* AppDelegate.swift */,
 				909A792125869163008E444D /* SceneDelegate.swift */,
-				909A792A25869164008E444D /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -221,6 +245,16 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		90DD14B0258AE83000AFEAA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				909A792A25869164008E444D /* LaunchScreen.storyboard */,
+				909A792825869164008E444D /* Assets.xcassets */,
+				90F27417258AEA3D005FEEDD /* Base.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9B9D1BAAD941FAC1BB1E4FE8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +276,7 @@
 			buildConfigurationList = 909A794625869164008E444D /* Build configuration list for PBXNativeTarget "iOS MVI Sample" */;
 			buildPhases = (
 				E369F91F529F0F7507AC95AD /* [CP] Check Pods Manifest.lock */,
+				9034146F258ABBCE0009A132 /* Run SwiftGen Script */,
 				909A791825869163008E444D /* Sources */,
 				909A791925869163008E444D /* Frameworks */,
 				909A791A25869163008E444D /* Resources */,
@@ -372,6 +407,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS MVI Sample/Pods-iOS MVI Sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9034146F258ABBCE0009A132 /* Run SwiftGen Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftGen Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"$PODS_ROOT/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 		E369F91F529F0F7507AC95AD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,12 +474,14 @@
 				90DB5F7D258810F100484694 /* NetworkRequest.swift in Sources */,
 				909A792425869163008E444D /* HomeViewController.swift in Sources */,
 				9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */,
+				90645693258AF2F800D2117B /* GenAsset.swift in Sources */,
 				90B05F562586B52700BDAD3A /* HomeFactory.swift in Sources */,
 				90B05F7C2586B73000BDAD3A /* RxCoordinator.swift in Sources */,
 				909A792025869163008E444D /* AppDelegate.swift in Sources */,
 				90B05F722586B70700BDAD3A /* RxInteractor.swift in Sources */,
 				9002BCB72587D05300A3649F /* Network.swift in Sources */,
 				90DB5F81258816D400484694 /* NetworkInterceptor.swift in Sources */,
+				90645694258AF2F800D2117B /* GenString.swift in Sources */,
 				90C9FC092587A6D900892BA4 /* RxFactory.swift in Sources */,
 				909A792225869163008E444D /* SceneDelegate.swift in Sources */,
 				90B05F772586B72000BDAD3A /* RxUseCase.swift in Sources */,
@@ -590,7 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iOS MVI Sample/Info.plist";
+				INFOPLIST_FILE = "iOS MVI Sample/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iOS MVI Sample/Info.plist";
+				INFOPLIST_FILE = "iOS MVI Sample/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -37,10 +37,10 @@ class RxInteractor<Command, Mutation, State>: RxInteracting {
     }
 
     func mutate(command: Command, state: State) -> Observable<Mutation> {
-        preconditionFailure("This method must be overridden")
+        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
     }
 
     func reduce(state: State, mutation: Mutation) -> State {
-        preconditionFailure("This method must be overridden")
+        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
     }
 }

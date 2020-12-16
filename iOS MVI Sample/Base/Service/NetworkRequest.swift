@@ -11,7 +11,7 @@ protocol NetworkRequest: URLConvertible {
 }
 
 extension NetworkRequest {
-    var domain: String { "" } // TODO: Add Domain as Env Key
+    var domain: String { GenString.Network.Request.domain }
     var headers: HTTPHeaders? { nil }
     var parameters: [String: Any]? { nil }
     var encoding: ParameterEncoding { URLEncoding.default }

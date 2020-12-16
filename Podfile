@@ -6,15 +6,16 @@ inhibit_all_warnings!
 target 'iOS MVI Sample' do
   use_frameworks!
 
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'Alamofire'
+  pod 'RxCocoa'
+  pod 'RxSwift'
+  pod 'SwiftGen'
 
   target 'iOS MVI SampleTests' do
     inherit! :search_paths
 
-    pod 'RxTest'
     pod 'RxBlocking'
+    pod 'RxTest'
   end
 end
 

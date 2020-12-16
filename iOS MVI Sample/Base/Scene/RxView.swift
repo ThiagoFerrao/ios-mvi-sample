@@ -19,7 +19,7 @@ class RxView<Command, ViewModel: Equatable, StatusView: UIView>: UIViewControlle
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init has not been implemented")
+        fatalError(GenString.Development.Assertion.initUnimplemented)
     }
 
     deinit {
@@ -62,6 +62,6 @@ class RxView<Command, ViewModel: Equatable, StatusView: UIView>: UIViewControlle
     }
 
     func configure(with viewModel: ViewModel) {
-        preconditionFailure("This method must be overridden")
+        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
     }
 }

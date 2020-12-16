@@ -8,8 +8,8 @@ final class NetworkInterceptor: RequestInterceptor {
         completion: @escaping (Result<URLRequest, Error>) -> Void
     ) {
         var request = urlRequest
-        request.headers.add(name: "Accept", value: "application/json")
-        request.headers.add(name: "user-key", value: "") // TODO: Add Zomato User Key as Env Key
+        request.headers.add(name: GenString.Network.Header.acceptKey, value: GenString.Network.Header.acceptValue)
+        request.headers.add(name: GenString.Network.Header.userKey, value: GenString.Network.Header.userValue)
 
         request.timeoutInterval = 10
 

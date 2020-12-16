@@ -22,6 +22,6 @@ class RxPresenter<State, ViewModel>: RxPresenting {
     }
 
     func stateToViewModel(state: State) -> ViewModel {
-        preconditionFailure("This method must be overridden")
+        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
     }
 }
