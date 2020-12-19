@@ -8,8 +8,16 @@ final class NetworkInterceptor: RequestInterceptor {
         completion: @escaping (Result<URLRequest, Error>) -> Void
     ) {
         var request = urlRequest
-        request.headers.add(name: GenString.Network.Header.acceptKey, value: GenString.Network.Header.acceptValue)
-        request.headers.add(name: GenString.Network.Header.userKey, value: GenString.Network.Header.userValue)
+
+        request.headers.add(
+            name: GenString.Network.Header.acceptKey,
+            value: GenString.Network.Header.acceptValue
+        )
+
+        request.headers.add(
+            name: GenString.Network.Header.userKey,
+            value: GenString.Network.Header.userValue
+        )
 
         request.timeoutInterval = 10
 

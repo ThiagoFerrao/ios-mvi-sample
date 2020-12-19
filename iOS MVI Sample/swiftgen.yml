@@ -1,0 +1,15 @@
+strings:
+  inputs: Resources/Base.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Generated/GenString.swift
+      params:
+        enumName: GenString
+
+xcassets:
+  inputs: Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Generated/GenAsset.swift
+      params:
+        enumName: GenAsset

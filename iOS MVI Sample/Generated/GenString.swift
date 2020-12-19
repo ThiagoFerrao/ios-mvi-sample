@@ -28,6 +28,10 @@ internal enum GenString {
   }
 
   internal enum Network {
+    /// https://developers.zomato.com/api
+    internal static let domain = GenString.tr("Base", "Network.domain")
+    /// v2.1
+    internal static let version = GenString.tr("Base", "Network.version")
     internal enum Header {
       /// Accept
       internal static let acceptKey = GenString.tr("Base", "Network.Header.acceptKey")
@@ -37,10 +41,6 @@ internal enum GenString {
       internal static let userKey = GenString.tr("Base", "Network.Header.userKey")
       /// 
       internal static let userValue = GenString.tr("Base", "Network.Header.userValue")
-    }
-    internal enum Request {
-      /// 
-      internal static let domain = GenString.tr("Base", "Network.Request.domain")
     }
   }
 }

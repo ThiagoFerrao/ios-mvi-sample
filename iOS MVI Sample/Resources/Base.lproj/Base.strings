@@ -1,8 +1,17 @@
+// AppDelegate Strings
+
 "AppDelegate.UISceneConfiguration.default" = "Default Configuration";
-"Network.Request.domain" = "";
+
+// Network Strings
+
+"Network.domain" = "https://developers.zomato.com/api";
+"Network.version" = "v2.1";
 "Network.Header.acceptKey" = "Accept";
 "Network.Header.acceptValue" = "application/json";
 "Network.Header.userKey" = "user-key";
 "Network.Header.userValue" = "";
+
+// Development Strings
+
 "Development.Assertion.initUnimplemented" = "init has not been implemented";
 "Development.Assertion.mustOverrideMethod" = "This method must be overridden";

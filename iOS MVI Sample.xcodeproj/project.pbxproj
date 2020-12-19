@@ -10,6 +10,12 @@
 		9002BCB72587D05300A3649F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002BCB62587D05300A3649F /* Network.swift */; };
 		9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002BCBC2587DDE900A3649F /* OptionalExtension.swift */; };
 		9015C7F025880CDA00E3C969 /* DebugChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015C7EF25880CDA00E3C969 /* DebugChecker.swift */; };
+		9043191F258E83A300452207 /* Base.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9043191D258E83A300452207 /* Base.strings */; };
+		90481E8C258E947F009CB6E6 /* HomeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481E8B258E947F009CB6E6 /* HomeDataFetcher.swift */; };
+		90481E9B258E9510009CB6E6 /* HomeDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481E9A258E9510009CB6E6 /* HomeDataRequest.swift */; };
+		90481EA2258E9A1F009CB6E6 /* HomeCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481EA1258E9A1F009CB6E6 /* HomeCategoryModel.swift */; };
+		90481EA6258EA744009CB6E6 /* HomeRestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481EA5258EA744009CB6E6 /* HomeRestaurantModel.swift */; };
+		90481EAD258EB3E4009CB6E6 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481EAC258EB3E4009CB6E6 /* HomeContract.swift */; };
 		90645693258AF2F800D2117B /* GenAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645691258AF2F800D2117B /* GenAsset.swift */; };
 		90645694258AF2F800D2117B /* GenString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645692258AF2F800D2117B /* GenString.swift */; };
 		909A792025869163008E444D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A791F25869163008E444D /* AppDelegate.swift */; };
@@ -50,9 +56,15 @@
 		9002BCB62587D05300A3649F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9002BCBC2587DDE900A3649F /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
 		9015C7EF25880CDA00E3C969 /* DebugChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugChecker.swift; sourceTree = "<group>"; };
+		9043191E258E83A300452207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Base.strings; sourceTree = "<group>"; };
+		90431922258E842700452207 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftgen.yml; path = "iOS MVI Sample/swiftgen.yml"; sourceTree = SOURCE_ROOT; };
+		90481E8B258E947F009CB6E6 /* HomeDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataFetcher.swift; sourceTree = "<group>"; };
+		90481E9A258E9510009CB6E6 /* HomeDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataRequest.swift; sourceTree = "<group>"; };
+		90481EA1258E9A1F009CB6E6 /* HomeCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryModel.swift; sourceTree = "<group>"; };
+		90481EA5258EA744009CB6E6 /* HomeRestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRestaurantModel.swift; sourceTree = "<group>"; };
+		90481EAC258EB3E4009CB6E6 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
 		90645691258AF2F800D2117B /* GenAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenAsset.swift; sourceTree = "<group>"; };
 		90645692258AF2F800D2117B /* GenString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenString.swift; sourceTree = "<group>"; };
-		908DF791258AF428005C7D6F /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		909A791C25869163008E444D /* iOS MVI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909A791F25869163008E444D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		909A792125869163008E444D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +84,6 @@
 		90C9FC082587A6D900892BA4 /* RxFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxFactory.swift; sourceTree = "<group>"; };
 		90DB5F7C258810F100484694 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		90DB5F80258816D400484694 /* NetworkInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptor.swift; sourceTree = "<group>"; };
-		90F27417258AEA3D005FEEDD /* Base.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Base.strings; sourceTree = "<group>"; };
 		B58C86E26086B55044A4F891 /* Pods-iOS MVI Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI Sample.debug.xcconfig"; path = "Target Support Files/Pods-iOS MVI Sample/Pods-iOS MVI Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB0E0ED199D3D43BB29EC35 /* Pods-iOS MVI SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI SampleTests.release.xcconfig"; path = "Target Support Files/Pods-iOS MVI SampleTests/Pods-iOS MVI SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2972AD35E5975B9A1D77346 /* Pods_iOS_MVI_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MVI_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +152,32 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		90481E89258E9452009CB6E6 /* DataFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				90481E8B258E947F009CB6E6 /* HomeDataFetcher.swift */,
+				90481E9A258E9510009CB6E6 /* HomeDataRequest.swift */,
+			);
+			path = DataFetcher;
+			sourceTree = "<group>";
+		};
+		90481EA0258E9986009CB6E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90481EA1258E9A1F009CB6E6 /* HomeCategoryModel.swift */,
+				90481EA5258EA744009CB6E6 /* HomeRestaurantModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90481EAB258EB3CA009CB6E6 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				90481EAC258EB3E4009CB6E6 /* HomeContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
 		90645675258AEF5E00D2117B /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +190,7 @@
 		908DF78C258AF3BE005C7D6F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				908DF791258AF428005C7D6F /* swiftgen.yml */,
+				90431922258E842700452207 /* swiftgen.yml */,
 				909A792D25869164008E444D /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -214,8 +251,11 @@
 		90B05F4F2586B4AE00BDAD3A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				90B05F542586B50C00BDAD3A /* View */,
+				90481EAB258EB3CA009CB6E6 /* Contract */,
 				90B05F532586B50600BDAD3A /* Factory */,
+				90481E89258E9452009CB6E6 /* DataFetcher */,
+				90481EA0258E9986009CB6E6 /* Model */,
+				90B05F542586B50C00BDAD3A /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -250,7 +290,7 @@
 			children = (
 				909A792A25869164008E444D /* LaunchScreen.storyboard */,
 				909A792825869164008E444D /* Assets.xcassets */,
-				90F27417258AEA3D005FEEDD /* Base.strings */,
+				9043191D258E83A300452207 /* Base.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -354,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				909A792C25869164008E444D /* LaunchScreen.storyboard in Resources */,
+				9043191F258E83A300452207 /* Base.strings in Resources */,
 				909A792925869164008E444D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"$PODS_ROOT/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+			shellScript = "if [[ -f $PODS_ROOT/SwiftGen/bin/swiftgen ]]; then\n  $PODS_ROOT/SwiftGen/bin/swiftgen config run --config iOS\\ MVI\\ Sample/swiftgen.yml\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 		E369F91F529F0F7507AC95AD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -476,13 +517,18 @@
 				9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */,
 				90645693258AF2F800D2117B /* GenAsset.swift in Sources */,
 				90B05F562586B52700BDAD3A /* HomeFactory.swift in Sources */,
+				90481EA6258EA744009CB6E6 /* HomeRestaurantModel.swift in Sources */,
+				90481EAD258EB3E4009CB6E6 /* HomeContract.swift in Sources */,
 				90B05F7C2586B73000BDAD3A /* RxCoordinator.swift in Sources */,
+				90481E9B258E9510009CB6E6 /* HomeDataRequest.swift in Sources */,
 				909A792025869163008E444D /* AppDelegate.swift in Sources */,
 				90B05F722586B70700BDAD3A /* RxInteractor.swift in Sources */,
 				9002BCB72587D05300A3649F /* Network.swift in Sources */,
 				90DB5F81258816D400484694 /* NetworkInterceptor.swift in Sources */,
 				90645694258AF2F800D2117B /* GenString.swift in Sources */,
 				90C9FC092587A6D900892BA4 /* RxFactory.swift in Sources */,
+				90481EA2258E9A1F009CB6E6 /* HomeCategoryModel.swift in Sources */,
+				90481E8C258E947F009CB6E6 /* HomeDataFetcher.swift in Sources */,
 				909A792225869163008E444D /* SceneDelegate.swift in Sources */,
 				90B05F772586B72000BDAD3A /* RxUseCase.swift in Sources */,
 				9015C7F025880CDA00E3C969 /* DebugChecker.swift in Sources */,
@@ -510,6 +556,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9043191D258E83A300452207 /* Base.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9043191E258E83A300452207 /* Base */,
+			);
+			name = Base.strings;
+			sourceTree = "<group>";
+		};
 		909A792A25869164008E444D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

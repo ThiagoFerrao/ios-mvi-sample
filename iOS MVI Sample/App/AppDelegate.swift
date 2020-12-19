@@ -7,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        Network.shared.interceptor = NetworkInterceptor()
+        setupNetwork()
 
         return true
     }
@@ -21,5 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             name: GenString.AppDelegate.UISceneConfiguration.default,
             sessionRole: connectingSceneSession.role
         )
+    }
+
+    private func setupNetwork() {
+        let configuration = URLSessionConfiguration.default
+        configuration.urlCredentialStorage = nil
+        Network.shared.configuration = configuration
+        Network.shared.interceptor = NetworkInterceptor()
     }
 }

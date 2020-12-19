@@ -6,13 +6,20 @@ protocol Networking {
     func request<T: Decodable>(with networkRequest: NetworkRequest) -> Single<T>
 }
 
-class Network: Networking {
+final class Network: Networking {
     static let shared = Network()
 
-    private(set) lazy var session: Session = .default
-    var interceptor: RequestInterceptor? {
+    private(set) var session: Session = Session.default
+
+    var configuration: URLSessionConfiguration = .default {
         didSet {
-            session = Session(interceptor: interceptor)
+            session = Session(configuration: configuration, interceptor: interceptor)
+        }
+    }
+
+    var interceptor: RequestInterceptor? = nil {
+        didSet {
+            session = Session(configuration: configuration, interceptor: interceptor)
         }
     }
 
