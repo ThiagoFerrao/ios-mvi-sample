@@ -9,24 +9,19 @@ protocol RxInteracting: class {
     var initialState: State { get }
     var inputCommand: Observable<Command> { get set }
     var outputState: Observable<State> { get }
+
     func mutate(command: Command, state: State) -> Observable<Mutation>
     func reduce(state: State, mutation: Mutation) -> State
+    func sideEffect(command: Command)
 }
 
-class RxInteractor<Command, Mutation, State>: RxInteracting {
+extension RxInteracting {
 
-    init(initialState: State) {
-        self.initialState = initialState
-    }
-
-    final let initialState: State
-
-    final var inputCommand: Observable<Command> = .empty()
-    
-    final var outputState: Observable<State> {
+    var outputState: Observable<State> {
         let currentState = PublishSubject<State>()
 
         return inputCommand
+            .do(onNext: { [weak self] in self?.sideEffect(command: $0) })
             .withLatestFrom(currentState) { ($0, $1) }
             .flatMap { [weak self] command, state -> Observable<Mutation> in
                 self?.mutate(command: command, state: state) ?? .empty()
@@ -34,13 +29,5 @@ class RxInteractor<Command, Mutation, State>: RxInteracting {
             .scan(initialState, accumulator: reduce)
             .startWith(initialState)
             .do(onNext: { currentState.onNext($0) })
-    }
-
-    func mutate(command: Command, state: State) -> Observable<Mutation> {
-        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
-    }
-
-    func reduce(state: State, mutation: Mutation) -> State {
-        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
     }
 }

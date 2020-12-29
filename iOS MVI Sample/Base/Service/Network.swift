@@ -7,6 +7,7 @@ protocol Networking {
 }
 
 final class Network: Networking {
+
     static let shared = Network()
 
     private(set) var session: Session = Session.default

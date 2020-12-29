@@ -16,6 +16,12 @@
 		90481EA2258E9A1F009CB6E6 /* HomeCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481EA1258E9A1F009CB6E6 /* HomeCategoryModel.swift */; };
 		90481EA6258EA744009CB6E6 /* HomeRestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481EA5258EA744009CB6E6 /* HomeRestaurantModel.swift */; };
 		90481EAD258EB3E4009CB6E6 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481EAC258EB3E4009CB6E6 /* HomeContract.swift */; };
+		905EC4C8259B930D000D9495 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EC4C7259B930D000D9495 /* HomeInteractor.swift */; };
+		905EC4D1259B9561000D9495 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EC4D0259B9561000D9495 /* HomePresenter.swift */; };
+		905EC4D7259B9A0D000D9495 /* HomeIntention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EC4D6259B9A0D000D9495 /* HomeIntention.swift */; };
+		905EC4E3259B9A66000D9495 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EC4E2259B9A66000D9495 /* HomeViewModel.swift */; };
+		905EC4E8259B9A97000D9495 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EC4E7259B9A97000D9495 /* HomeCoordinator.swift */; };
+		905EC525259BDA2A000D9495 /* HomeDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EC524259BDA2A000D9495 /* HomeDataUseCase.swift */; };
 		90645693258AF2F800D2117B /* GenAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645691258AF2F800D2117B /* GenAsset.swift */; };
 		90645694258AF2F800D2117B /* GenString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645692258AF2F800D2117B /* GenString.swift */; };
 		909A792025869163008E444D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A791F25869163008E444D /* AppDelegate.swift */; };
@@ -33,6 +39,7 @@
 		90C9FC092587A6D900892BA4 /* RxFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9FC082587A6D900892BA4 /* RxFactory.swift */; };
 		90DB5F7D258810F100484694 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5F7C258810F100484694 /* NetworkRequest.swift */; };
 		90DB5F81258816D400484694 /* NetworkInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5F80258816D400484694 /* NetworkInterceptor.swift */; };
+		90FA4F3925A26A5C00B850B5 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA4F3825A26A5C00B850B5 /* AlertExtension.swift */; };
 		A6EBB2DCA6A62947CB004430 /* Pods_iOS_MVI_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3338CCA28FEDFDD0AF8E6359 /* Pods_iOS_MVI_Sample.framework */; };
 		C5E40EA518C2FE93F1F2E642 /* Pods_iOS_MVI_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2972AD35E5975B9A1D77346 /* Pods_iOS_MVI_SampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +70,12 @@
 		90481EA1258E9A1F009CB6E6 /* HomeCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryModel.swift; sourceTree = "<group>"; };
 		90481EA5258EA744009CB6E6 /* HomeRestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRestaurantModel.swift; sourceTree = "<group>"; };
 		90481EAC258EB3E4009CB6E6 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
+		905EC4C7259B930D000D9495 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		905EC4D0259B9561000D9495 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		905EC4D6259B9A0D000D9495 /* HomeIntention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIntention.swift; sourceTree = "<group>"; };
+		905EC4E2259B9A66000D9495 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		905EC4E7259B9A97000D9495 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		905EC524259BDA2A000D9495 /* HomeDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataUseCase.swift; sourceTree = "<group>"; };
 		90645691258AF2F800D2117B /* GenAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenAsset.swift; sourceTree = "<group>"; };
 		90645692258AF2F800D2117B /* GenString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenString.swift; sourceTree = "<group>"; };
 		909A791C25869163008E444D /* iOS MVI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +97,7 @@
 		90C9FC082587A6D900892BA4 /* RxFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxFactory.swift; sourceTree = "<group>"; };
 		90DB5F7C258810F100484694 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		90DB5F80258816D400484694 /* NetworkInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptor.swift; sourceTree = "<group>"; };
+		90FA4F3825A26A5C00B850B5 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		B58C86E26086B55044A4F891 /* Pods-iOS MVI Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI Sample.debug.xcconfig"; path = "Target Support Files/Pods-iOS MVI Sample/Pods-iOS MVI Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB0E0ED199D3D43BB29EC35 /* Pods-iOS MVI SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI SampleTests.release.xcconfig"; path = "Target Support Files/Pods-iOS MVI SampleTests/Pods-iOS MVI SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2972AD35E5975B9A1D77346 /* Pods_iOS_MVI_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MVI_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +160,9 @@
 		9002BCBB2587DDD800A3649F /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				9002BCBC2587DDE900A3649F /* OptionalExtension.swift */,
 				9015C7EF25880CDA00E3C969 /* DebugChecker.swift */,
+				9002BCBC2587DDE900A3649F /* OptionalExtension.swift */,
+				90FA4F3825A26A5C00B850B5 /* AlertExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -176,6 +191,40 @@
 				90481EAC258EB3E4009CB6E6 /* HomeContract.swift */,
 			);
 			path = Contract;
+			sourceTree = "<group>";
+		};
+		905EC4C6259B925D000D9495 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				905EC4C7259B930D000D9495 /* HomeInteractor.swift */,
+				905EC4D6259B9A0D000D9495 /* HomeIntention.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		905EC4CF259B9552000D9495 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				905EC4D0259B9561000D9495 /* HomePresenter.swift */,
+				905EC4E2259B9A66000D9495 /* HomeViewModel.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		905EC4E6259B9A88000D9495 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				905EC4E7259B9A97000D9495 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		905EC50C259BD3E7000D9495 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				905EC524259BDA2A000D9495 /* HomeDataUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		90645675258AEF5E00D2117B /* Generated */ = {
@@ -251,10 +300,14 @@
 		90B05F4F2586B4AE00BDAD3A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				90481EAB258EB3CA009CB6E6 /* Contract */,
 				90B05F532586B50600BDAD3A /* Factory */,
+				90481EAB258EB3CA009CB6E6 /* Contract */,
 				90481E89258E9452009CB6E6 /* DataFetcher */,
 				90481EA0258E9986009CB6E6 /* Model */,
+				905EC4E6259B9A88000D9495 /* Coordinator */,
+				905EC4C6259B925D000D9495 /* Interactor */,
+				905EC50C259BD3E7000D9495 /* UseCase */,
+				905EC4CF259B9552000D9495 /* Presenter */,
 				90B05F542586B50C00BDAD3A /* View */,
 			);
 			path = Home;
@@ -516,22 +569,29 @@
 				909A792425869163008E444D /* HomeViewController.swift in Sources */,
 				9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */,
 				90645693258AF2F800D2117B /* GenAsset.swift in Sources */,
+				905EC4E8259B9A97000D9495 /* HomeCoordinator.swift in Sources */,
 				90B05F562586B52700BDAD3A /* HomeFactory.swift in Sources */,
 				90481EA6258EA744009CB6E6 /* HomeRestaurantModel.swift in Sources */,
 				90481EAD258EB3E4009CB6E6 /* HomeContract.swift in Sources */,
 				90B05F7C2586B73000BDAD3A /* RxCoordinator.swift in Sources */,
 				90481E9B258E9510009CB6E6 /* HomeDataRequest.swift in Sources */,
 				909A792025869163008E444D /* AppDelegate.swift in Sources */,
+				905EC525259BDA2A000D9495 /* HomeDataUseCase.swift in Sources */,
 				90B05F722586B70700BDAD3A /* RxInteractor.swift in Sources */,
 				9002BCB72587D05300A3649F /* Network.swift in Sources */,
+				90FA4F3925A26A5C00B850B5 /* AlertExtension.swift in Sources */,
 				90DB5F81258816D400484694 /* NetworkInterceptor.swift in Sources */,
 				90645694258AF2F800D2117B /* GenString.swift in Sources */,
 				90C9FC092587A6D900892BA4 /* RxFactory.swift in Sources */,
+				905EC4D1259B9561000D9495 /* HomePresenter.swift in Sources */,
+				905EC4D7259B9A0D000D9495 /* HomeIntention.swift in Sources */,
 				90481EA2258E9A1F009CB6E6 /* HomeCategoryModel.swift in Sources */,
 				90481E8C258E947F009CB6E6 /* HomeDataFetcher.swift in Sources */,
 				909A792225869163008E444D /* SceneDelegate.swift in Sources */,
 				90B05F772586B72000BDAD3A /* RxUseCase.swift in Sources */,
 				9015C7F025880CDA00E3C969 /* DebugChecker.swift in Sources */,
+				905EC4E3259B9A66000D9495 /* HomeViewModel.swift in Sources */,
+				905EC4C8259B930D000D9495 /* HomeInteractor.swift in Sources */,
 				90B05F6A2586B6E600BDAD3A /* RxPresenter.swift in Sources */,
 				90B05F622586B6CF00BDAD3A /* RxView.swift in Sources */,
 			);

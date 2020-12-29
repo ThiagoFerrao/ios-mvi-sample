@@ -14,6 +14,11 @@ final class HomeDataFetcher: HomeDataFetching {
             .map { (response: HomeCategoriesModel) in response.categories }
     }
 
+    func fetchAllRestaurants() -> Single<[HomeRestaurantModel]> {
+        return network.request(with: Request.allRestaurants)
+            .map { (response: HomeRestaurantsModel) in response.restaurants }
+    }
+
     func fetchSearchedRestaurants(searchValue: String) -> Single<[HomeRestaurantModel]> {
         return network.request(with: Request.searchRestaurants(searchValue: searchValue))
             .map { (response: HomeRestaurantsModel) in response.restaurants }

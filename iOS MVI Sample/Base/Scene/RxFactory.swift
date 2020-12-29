@@ -7,7 +7,8 @@ protocol RxFactoring: class {
 }
 
 extension RxFactoring where Parameter == Void {
+
     static func make() -> UIViewController {
-        make(with: ())
+        return make(with: ())
     }
 }

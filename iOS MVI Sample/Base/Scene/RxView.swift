@@ -6,12 +6,17 @@ protocol RxViewing {
     associatedtype Command
     associatedtype ViewModel
 
+    var disposeBag: DisposeBag { get }
     var inputViewModel: Observable<ViewModel> { get }
     var outputCommand: PublishSubject<Command> { get }
-    var disposeBag: DisposeBag { get }
+
+    func setupViews()
+    func setupBindings()
+    func setupConstraints()
+    func configure(with viewModel: ViewModel)
 }
 
-class RxView<Command, ViewModel: Equatable, StatusView: UIView>: UIViewController, RxViewing {
+class RxView<Command, ViewModel: Equatable, View: UIView>: UIViewController, RxViewing {
 
     init(screenBinding: ((Observable<Command>) -> Observable<ViewModel>)) {
         inputViewModel = screenBinding(outputCommand)
@@ -26,32 +31,25 @@ class RxView<Command, ViewModel: Equatable, StatusView: UIView>: UIViewControlle
         outputCommand.onCompleted()
     }
 
-    final let statusView = StatusView()
+    final let disposeBag = DisposeBag()
 
     final let inputViewModel: Observable<ViewModel>
 
     final let outputCommand = PublishSubject<Command>()
 
-    final let disposeBag = DisposeBag()
+    override func loadView() {
+        view = View()
+    }
 
     final override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
         setupBindings()
+        setupConstraints()
     }
 
-    func setupViews() {
-        view.addSubview(statusView)
-
-        NSLayoutConstraint.activate([
-            statusView.topAnchor.constraint(equalTo: view.topAnchor),
-            statusView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            statusView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            statusView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        statusView.isHidden = true
-    }
+    func setupViews() { }
 
     func setupBindings() {
         inputViewModel
@@ -61,7 +59,7 @@ class RxView<Command, ViewModel: Equatable, StatusView: UIView>: UIViewControlle
             .disposed(by: disposeBag)
     }
 
-    func configure(with viewModel: ViewModel) {
-        preconditionFailure(GenString.Development.Assertion.mustOverrideMethod)
-    }
+    func setupConstraints() { }
+
+    func configure(with viewModel: ViewModel) { }
 }
