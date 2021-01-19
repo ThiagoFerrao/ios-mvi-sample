@@ -3,7 +3,7 @@ import RxSwift
 
 protocol RxPresenting: class {
     associatedtype State
-    associatedtype ViewModel
+    associatedtype ViewModel: Equatable
 
     var inputState: Observable<State> { get set }
     var outputViewModel: Observable<ViewModel> { get }

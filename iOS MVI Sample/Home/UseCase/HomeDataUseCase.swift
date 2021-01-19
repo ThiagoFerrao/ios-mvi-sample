@@ -31,7 +31,6 @@ final class HomeDataUseCase: HomeDataUseCasing {
                 return errorObservable.flatMap { error -> Observable<Void> in
                     let requestError = RequestError(statusCode: error.asAFError?.responseCode)
                     return self.coordinator.presentAlert(with: requestError.alertViewModel)
-                        .do(onNext: { element in if element == .close { self.coordinator.dismissScreen() } })
                         .filter { $0 == .retry }
                         .map { _ in () }
                 }
@@ -62,22 +61,21 @@ extension HomeDataUseCase.RequestError {
         switch self {
         case .forbidden:
             return .init(
-                title: "Unable to Retrieve Data",
-                message: "An user Key is needed to use the Zomato API. Generate one in the Zomato website and add it in the Base.strings before running the app",
+                title: GenString.Alert.Title.error,
+                message: GenString.Alert.Message.userKeyError,
                 style: .alert,
                 actions: [
-                    .init(title: "Close", style: .destructive, response: .close)
+                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry)
                 ]
             )
 
         case .general:
             return .init(
-                title: "Unable to Retrieve Data",
-                message: "An error during the data request happened. Please, try again later",
+                title: GenString.Alert.Title.error,
+                message: GenString.Alert.Message.defaultError,
                 style: .alert,
                 actions: [
-                    .init(title: "Retry", style: .default, response: .retry),
-                    .init(title: "Close", style: .destructive, response: .close)
+                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry)
                 ]
             )
         }

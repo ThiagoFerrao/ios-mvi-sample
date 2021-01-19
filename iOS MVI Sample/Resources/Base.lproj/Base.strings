@@ -1,8 +1,8 @@
-// AppDelegate Strings
+// AppDelegate
 
 "AppDelegate.UISceneConfiguration.default" = "Default Configuration";
 
-// Network Strings
+// Network
 
 "Network.domain" = "https://developers.zomato.com/api";
 "Network.version" = "v2.1";
@@ -11,7 +11,24 @@
 "Network.Header.userKey" = "user-key";
 "Network.Header.userValue" = "";
 
-// Development Strings
+// Development
 
 "Development.Assertion.initUnimplemented" = "init has not been implemented";
 "Development.Assertion.mustOverrideMethod" = "This method must be overridden";
+"Development.Test.Path.environment" = "XCTestConfigurationFilePath";
+
+// Alert
+
+"Alert.Title.error" = "Unable to Retrieve Data";
+"Alert.Message.userKeyError" = "An user Key is needed to use the Zomato API. \nGenerate one in the Zomato website and add it in the Base.strings before running the app";
+"Alert.Message.defaultError" = "An error during the data request happened. \nPlease, try again later";
+"Alert.Action.retry" = "Retry";
+"Alert.Action.close" = "Close";
+
+// Home
+
+"Home.Request.Path.categories" = "categories";
+"Home.Request.Path.search" = "search";
+"Home.Request.Parameter.search" = "q";
+"Home.Collection.DefaultCell.identifier" = "HomeCollectionDefaultCell";
+"Home.View.title" = "Search Restaurants";

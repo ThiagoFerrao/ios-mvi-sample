@@ -3,9 +3,9 @@ import RxSwift
 
 final class HomeDataFetcher: HomeDataFetching {
 
-    private let network: Network
+    private let network: Networking
 
-    init(network: Network) {
+    init(network: Networking) {
         self.network = network
     }
 

@@ -1,6 +1,10 @@
 import Foundation
 
-final class DebugChecker {
+final class AppChecker {
+    static var isRunningTests: Bool {
+        return ProcessInfo.processInfo.environment[GenString.Development.Test.Path.environment] != nil
+    }
+
     static var isDebug: Bool {
         #if DEBUG
             return true

@@ -1,6 +1,6 @@
 import Foundation
 
-public enum OptionalError: Error {
+enum OptionalError: Error {
     case unableToUnwrap
 }
 

@@ -58,7 +58,7 @@ extension Reactive where Base: Session {
                 }
             }
 
-            DebugChecker.executeInDebug {
+            AppChecker.executeInDebug {
                 request.cURLDescription { print($0) }
             }
 

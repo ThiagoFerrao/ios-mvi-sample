@@ -1,6 +1,6 @@
 import Foundation
 
-struct HomeViewModel {
+struct HomeViewModel: Equatable {
     let isLoading: Bool
     let restaurants: [HomeRestaurantModel]
 }

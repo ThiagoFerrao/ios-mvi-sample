@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9002BCB72587D05300A3649F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002BCB62587D05300A3649F /* Network.swift */; };
 		9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002BCBC2587DDE900A3649F /* OptionalExtension.swift */; };
-		9015C7F025880CDA00E3C969 /* DebugChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015C7EF25880CDA00E3C969 /* DebugChecker.swift */; };
+		9015C7F025880CDA00E3C969 /* AppChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015C7EF25880CDA00E3C969 /* AppChecker.swift */; };
 		9043191F258E83A300452207 /* Base.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9043191D258E83A300452207 /* Base.strings */; };
 		90481E8C258E947F009CB6E6 /* HomeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481E8B258E947F009CB6E6 /* HomeDataFetcher.swift */; };
 		90481E9B258E9510009CB6E6 /* HomeDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90481E9A258E9510009CB6E6 /* HomeDataRequest.swift */; };
@@ -36,6 +36,9 @@
 		90B05F722586B70700BDAD3A /* RxInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B05F712586B70700BDAD3A /* RxInteractor.swift */; };
 		90B05F772586B72000BDAD3A /* RxUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B05F762586B72000BDAD3A /* RxUseCase.swift */; };
 		90B05F7C2586B73000BDAD3A /* RxCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B05F7B2586B73000BDAD3A /* RxCoordinator.swift */; };
+		90B8BC9A25B716FE006CC85C /* AppScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8BC9925B716FE006CC85C /* AppScheduler.swift */; };
+		90B8BCAF25B75CF1006CC85C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8BCAE25B75CF1006CC85C /* UIViewExtension.swift */; };
+		90B8BCC025B76675006CC85C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8BCBF25B76675006CC85C /* HomeCollectionViewCell.swift */; };
 		90C9FC092587A6D900892BA4 /* RxFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9FC082587A6D900892BA4 /* RxFactory.swift */; };
 		90DB5F7D258810F100484694 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5F7C258810F100484694 /* NetworkRequest.swift */; };
 		90DB5F81258816D400484694 /* NetworkInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5F80258816D400484694 /* NetworkInterceptor.swift */; };
@@ -62,7 +65,7 @@
 		84E9A2DE946F72DC5F299D12 /* Pods-iOS MVI Sample-iOS MVI SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS MVI Sample-iOS MVI SampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS MVI Sample-iOS MVI SampleUITests/Pods-iOS MVI Sample-iOS MVI SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9002BCB62587D05300A3649F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9002BCBC2587DDE900A3649F /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
-		9015C7EF25880CDA00E3C969 /* DebugChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugChecker.swift; sourceTree = "<group>"; };
+		9015C7EF25880CDA00E3C969 /* AppChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecker.swift; sourceTree = "<group>"; };
 		9043191E258E83A300452207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Base.strings; sourceTree = "<group>"; };
 		90431922258E842700452207 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftgen.yml; path = "iOS MVI Sample/swiftgen.yml"; sourceTree = SOURCE_ROOT; };
 		90481E8B258E947F009CB6E6 /* HomeDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataFetcher.swift; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		90B05F712586B70700BDAD3A /* RxInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxInteractor.swift; sourceTree = "<group>"; };
 		90B05F762586B72000BDAD3A /* RxUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUseCase.swift; sourceTree = "<group>"; };
 		90B05F7B2586B73000BDAD3A /* RxCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCoordinator.swift; sourceTree = "<group>"; };
+		90B8BC9925B716FE006CC85C /* AppScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScheduler.swift; sourceTree = "<group>"; };
+		90B8BCAE25B75CF1006CC85C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		90B8BCBF25B76675006CC85C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		90C9FC082587A6D900892BA4 /* RxFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxFactory.swift; sourceTree = "<group>"; };
 		90DB5F7C258810F100484694 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		90DB5F80258816D400484694 /* NetworkInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptor.swift; sourceTree = "<group>"; };
@@ -137,12 +143,12 @@
 		9002BCB42587D02800A3649F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				90C9FC082587A6D900892BA4 /* RxFactory.swift */,
-				90B05F612586B6CF00BDAD3A /* RxView.swift */,
-				90B05F692586B6E600BDAD3A /* RxPresenter.swift */,
-				90B05F712586B70700BDAD3A /* RxInteractor.swift */,
-				90B05F762586B72000BDAD3A /* RxUseCase.swift */,
 				90B05F7B2586B73000BDAD3A /* RxCoordinator.swift */,
+				90B05F762586B72000BDAD3A /* RxUseCase.swift */,
+				90B05F712586B70700BDAD3A /* RxInteractor.swift */,
+				90B05F692586B6E600BDAD3A /* RxPresenter.swift */,
+				90B05F612586B6CF00BDAD3A /* RxView.swift */,
+				90C9FC082587A6D900892BA4 /* RxFactory.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -160,9 +166,11 @@
 		9002BCBB2587DDD800A3649F /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				9015C7EF25880CDA00E3C969 /* DebugChecker.swift */,
-				9002BCBC2587DDE900A3649F /* OptionalExtension.swift */,
+				9015C7EF25880CDA00E3C969 /* AppChecker.swift */,
+				90B8BC9925B716FE006CC85C /* AppScheduler.swift */,
 				90FA4F3825A26A5C00B850B5 /* AlertExtension.swift */,
+				9002BCBC2587DDE900A3649F /* OptionalExtension.swift */,
+				90B8BCAE25B75CF1006CC85C /* UIViewExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			children = (
 				90481EA1258E9A1F009CB6E6 /* HomeCategoryModel.swift */,
 				90481EA5258EA744009CB6E6 /* HomeRestaurantModel.swift */,
+				905EC4E2259B9A66000D9495 /* HomeViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				905EC4D0259B9561000D9495 /* HomePresenter.swift */,
-				905EC4E2259B9A66000D9495 /* HomeViewModel.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -300,15 +308,15 @@
 		90B05F4F2586B4AE00BDAD3A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				90B05F532586B50600BDAD3A /* Factory */,
 				90481EAB258EB3CA009CB6E6 /* Contract */,
 				90481E89258E9452009CB6E6 /* DataFetcher */,
 				90481EA0258E9986009CB6E6 /* Model */,
 				905EC4E6259B9A88000D9495 /* Coordinator */,
-				905EC4C6259B925D000D9495 /* Interactor */,
 				905EC50C259BD3E7000D9495 /* UseCase */,
+				905EC4C6259B925D000D9495 /* Interactor */,
 				905EC4CF259B9552000D9495 /* Presenter */,
 				90B05F542586B50C00BDAD3A /* View */,
+				90B05F532586B50600BDAD3A /* Factory */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				909A792325869163008E444D /* HomeViewController.swift */,
+				90B8BCBF25B76675006CC85C /* HomeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -570,12 +579,15 @@
 				9002BCBD2587DDE900A3649F /* OptionalExtension.swift in Sources */,
 				90645693258AF2F800D2117B /* GenAsset.swift in Sources */,
 				905EC4E8259B9A97000D9495 /* HomeCoordinator.swift in Sources */,
+				90B8BCC025B76675006CC85C /* HomeCollectionViewCell.swift in Sources */,
 				90B05F562586B52700BDAD3A /* HomeFactory.swift in Sources */,
 				90481EA6258EA744009CB6E6 /* HomeRestaurantModel.swift in Sources */,
+				90B8BC9A25B716FE006CC85C /* AppScheduler.swift in Sources */,
 				90481EAD258EB3E4009CB6E6 /* HomeContract.swift in Sources */,
 				90B05F7C2586B73000BDAD3A /* RxCoordinator.swift in Sources */,
 				90481E9B258E9510009CB6E6 /* HomeDataRequest.swift in Sources */,
 				909A792025869163008E444D /* AppDelegate.swift in Sources */,
+				90B8BCAF25B75CF1006CC85C /* UIViewExtension.swift in Sources */,
 				905EC525259BDA2A000D9495 /* HomeDataUseCase.swift in Sources */,
 				90B05F722586B70700BDAD3A /* RxInteractor.swift in Sources */,
 				9002BCB72587D05300A3649F /* Network.swift in Sources */,
@@ -589,7 +601,7 @@
 				90481E8C258E947F009CB6E6 /* HomeDataFetcher.swift in Sources */,
 				909A792225869163008E444D /* SceneDelegate.swift in Sources */,
 				90B05F772586B72000BDAD3A /* RxUseCase.swift in Sources */,
-				9015C7F025880CDA00E3C969 /* DebugChecker.swift in Sources */,
+				9015C7F025880CDA00E3C969 /* AppChecker.swift in Sources */,
 				905EC4E3259B9A66000D9495 /* HomeViewModel.swift in Sources */,
 				905EC4C8259B930D000D9495 /* HomeInteractor.swift in Sources */,
 				90B05F6A2586B6E600BDAD3A /* RxPresenter.swift in Sources */,

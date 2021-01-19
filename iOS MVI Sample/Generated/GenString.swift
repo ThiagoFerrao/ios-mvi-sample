@@ -11,6 +11,25 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum GenString {
 
+  internal enum Alert {
+    internal enum Action {
+      /// Close
+      internal static let close = GenString.tr("Base", "Alert.Action.close")
+      /// Retry
+      internal static let retry = GenString.tr("Base", "Alert.Action.retry")
+    }
+    internal enum Message {
+      /// An error during the data request happened. \nPlease, try again later
+      internal static let defaultError = GenString.tr("Base", "Alert.Message.defaultError")
+      /// An user Key is needed to use the Zomato API. \nGenerate one in the Zomato website and add it in the Base.strings before running the app
+      internal static let userKeyError = GenString.tr("Base", "Alert.Message.userKeyError")
+    }
+    internal enum Title {
+      /// Unable to Retrieve Data
+      internal static let error = GenString.tr("Base", "Alert.Title.error")
+    }
+  }
+
   internal enum AppDelegate {
     internal enum UISceneConfiguration {
       /// Default Configuration
@@ -24,6 +43,37 @@ internal enum GenString {
       internal static let initUnimplemented = GenString.tr("Base", "Development.Assertion.initUnimplemented")
       /// This method must be overridden
       internal static let mustOverrideMethod = GenString.tr("Base", "Development.Assertion.mustOverrideMethod")
+    }
+    internal enum Test {
+      internal enum Path {
+        /// XCTestConfigurationFilePath
+        internal static let environment = GenString.tr("Base", "Development.Test.Path.environment")
+      }
+    }
+  }
+
+  internal enum Home {
+    internal enum Collection {
+      internal enum DefaultCell {
+        /// HomeCollectionDefaultCell
+        internal static let identifier = GenString.tr("Base", "Home.Collection.DefaultCell.identifier")
+      }
+    }
+    internal enum Request {
+      internal enum Parameter {
+        /// q
+        internal static let search = GenString.tr("Base", "Home.Request.Parameter.search")
+      }
+      internal enum Path {
+        /// categories
+        internal static let categories = GenString.tr("Base", "Home.Request.Path.categories")
+        /// search
+        internal static let search = GenString.tr("Base", "Home.Request.Path.search")
+      }
+    }
+    internal enum View {
+      /// Search Restaurants
+      internal static let title = GenString.tr("Base", "Home.View.title")
     }
   }
 

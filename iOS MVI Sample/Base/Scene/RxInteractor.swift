@@ -18,9 +18,10 @@ protocol RxInteracting: class {
 extension RxInteracting {
 
     var outputState: Observable<State> {
-        let currentState = PublishSubject<State>()
+        let currentState = ReplaySubject<State>.create(bufferSize: 1)
 
         return inputCommand
+            .subscribeOn(AppScheduler.background)
             .do(onNext: { [weak self] in self?.sideEffect(command: $0) })
             .withLatestFrom(currentState) { ($0, $1) }
             .flatMap { [weak self] command, state -> Observable<Mutation> in

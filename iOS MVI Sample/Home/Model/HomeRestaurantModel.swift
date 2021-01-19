@@ -4,7 +4,7 @@ struct HomeRestaurantsModel: Decodable {
     let restaurants: [HomeRestaurantModel]
 }
 
-struct HomeRestaurantModel: Decodable {
+struct HomeRestaurantModel: Equatable, Decodable {
     let id: String
     let name: String
     let address: String

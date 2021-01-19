@@ -1,9 +1,6 @@
 import Foundation
 import RxSwift
 
-protocol HomeFactoring: RxFactoring where
-    Parameter == Void { }
-
 protocol HomeDataFetching {
     typealias Request = HomeDataRequest
 
@@ -13,7 +10,6 @@ protocol HomeDataFetching {
 }
 
 protocol HomeCoordinating: RxCoordinating {
-    func dismissScreen()
     func presentAlert<Response>(with viewModel: UIAlertController.ViewModel<Response>) -> Observable<Response>
 }
 
@@ -27,3 +23,6 @@ protocol HomeInteracting: RxInteracting where
 protocol HomePresenting: RxPresenting where
     State == HomeState,
     ViewModel == HomeViewModel { }
+
+protocol HomeFactoring: RxFactoring where
+    Parameter == Void { }

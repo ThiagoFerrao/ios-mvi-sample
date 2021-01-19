@@ -26,9 +26,6 @@ final class HomeInteractor: HomeInteracting {
 
         case let .searchValue(term):
             return dataUseCase.execute(with: .searchedRestaurants(searchValue: term))
-
-        case .dismissScreen:
-            return .empty()
         }
     }
 
@@ -49,9 +46,6 @@ final class HomeInteractor: HomeInteracting {
 
     func sideEffect(command: HomeCommand) {
         switch command {
-        case .dismissScreen:
-            coordinator.dismissScreen()
-
         case .loadData, .searchValue:
             break
         }

@@ -7,19 +7,38 @@ protocol RxViewing {
     associatedtype ViewModel
 
     var disposeBag: DisposeBag { get }
-    var inputViewModel: Observable<ViewModel> { get }
+    var inputViewModel: Driver<ViewModel> { get }
     var outputCommand: PublishSubject<Command> { get }
 
+    func setupHierarchy()
+    func setupConstraints()
     func setupViews()
     func setupBindings()
-    func setupConstraints()
     func configure(with viewModel: ViewModel)
 }
 
-class RxView<Command, ViewModel: Equatable, View: UIView>: UIViewController, RxViewing {
+class RxView<Presenter: RxPresenting, Interactor: RxInteracting>: UIViewController, RxViewing {
+    typealias Command = Interactor.Command
+    typealias ViewModel = Presenter.ViewModel
 
-    init(screenBinding: ((Observable<Command>) -> Observable<ViewModel>)) {
-        inputViewModel = screenBinding(outputCommand)
+    final let presenter: Presenter
+    final let interactor: Interactor
+
+    final let inputViewModel: Driver<ViewModel>
+    final let outputCommand = PublishSubject<Command>()
+    final let disposeBag = DisposeBag()
+
+    init(
+        presenter: Presenter,
+        interactor: Interactor,
+        screenBinding: ((Observable<Command>) -> Observable<ViewModel>)
+    ) {
+        self.presenter = presenter
+        self.interactor = interactor
+        self.inputViewModel = screenBinding(outputCommand)
+            .asDriver(onErrorDriveWith: .empty())
+            .distinctUntilChanged()
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -31,35 +50,26 @@ class RxView<Command, ViewModel: Equatable, View: UIView>: UIViewController, RxV
         outputCommand.onCompleted()
     }
 
-    final let disposeBag = DisposeBag()
-
-    final let inputViewModel: Observable<ViewModel>
-
-    final let outputCommand = PublishSubject<Command>()
-
-    override func loadView() {
-        view = View()
-    }
-
     final override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupHierarchy()
+        setupConstraints()
         setupViews()
         setupBindings()
-        setupConstraints()
     }
+
+    func setupHierarchy() { }
+
+    func setupConstraints() { }
 
     func setupViews() { }
 
     func setupBindings() {
         inputViewModel
-            .asDriver(onErrorDriveWith: .empty())
-            .distinctUntilChanged()
             .drive(onNext: { [weak self] in self?.configure(with: $0) })
             .disposed(by: disposeBag)
     }
-
-    func setupConstraints() { }
 
     func configure(with viewModel: ViewModel) { }
 }

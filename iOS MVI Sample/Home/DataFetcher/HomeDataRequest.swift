@@ -9,10 +9,10 @@ enum HomeDataRequest: NetworkRequest {
     var path: String {
         switch self {
         case .allCategories:
-            return "categories"
+            return GenString.Home.Request.Path.categories
 
         case .allRestaurants, .searchRestaurants:
-            return "search"
+            return GenString.Home.Request.Path.search
         }
     }
 
@@ -23,7 +23,7 @@ enum HomeDataRequest: NetworkRequest {
 
         case let .searchRestaurants(searchValue):
             return [
-                "q" : searchValue
+                GenString.Home.Request.Parameter.search : searchValue
             ]
         }
     }

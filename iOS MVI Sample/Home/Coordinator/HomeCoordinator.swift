@@ -4,10 +4,6 @@ import RxSwift
 final class HomeCoordinator: HomeCoordinating {
     weak var viewController: UIViewController?
 
-    func dismissScreen() {
-        dismiss()
-    }
-
     func presentAlert<Response>(
         with viewModel: UIAlertController.ViewModel<Response>
     ) -> Observable<Response> {
