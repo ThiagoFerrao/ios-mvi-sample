@@ -2,13 +2,21 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+private struct Layout {
+    let cellsInRow: CGFloat = 2
+    let cellSpacing: CGFloat = 10
+    let cellSectionInset = UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
+    let collectionContentInset = UIEdgeInsets(top: 10, left: .zero, bottom: .zero, right: .zero)
+}
+
 final class HomeViewController: RxView<HomePresenter, HomeInteractor> {
 
+    private let layout = Layout()
+
     private lazy var collectionView: UICollectionView = {
-        let collectionLayout = UICollectionViewFlowLayout()
-        collectionLayout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.contentInset = layout.collectionContentInset
         return collectionView
     }()
 
@@ -35,9 +43,7 @@ final class HomeViewController: RxView<HomePresenter, HomeInteractor> {
     override func setupViews() {
         title = GenString.Home.View.title
 
-        view.backgroundColor = .white
-
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = GenColor.groupedBackground.color
         collectionView.register(
             HomeCollectionViewCell.self,
             forCellWithReuseIdentifier: GenString.Home.Collection.DefaultCell.identifier
@@ -48,8 +54,6 @@ final class HomeViewController: RxView<HomePresenter, HomeInteractor> {
     }
 
     override func setupBindings() {
-        super.setupBindings()
-
         collectionView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
@@ -69,6 +73,16 @@ final class HomeViewController: RxView<HomePresenter, HomeInteractor> {
             .drive(loadingIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
     }
+
+    private func makeCollectionLayout() -> UICollectionViewLayout {
+        let collectionLayout = UICollectionViewFlowLayout()
+        collectionLayout.scrollDirection = .vertical
+        collectionLayout.sectionInset = layout.cellSectionInset
+        collectionLayout.minimumLineSpacing = layout.cellSpacing
+        collectionLayout.minimumInteritemSpacing = layout.cellSpacing
+
+        return collectionLayout
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -77,8 +91,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let cellWidth = (UIScreen.main.bounds.width / 2) - 10
-        let cellHeight = cellWidth / 0.9
-        return CGSize(width: cellWidth, height: cellHeight)
+        let itemSpacing = layout.cellSpacing * (layout.cellsInRow - 1)
+        let sectionSpacing = layout.cellSectionInset.left + layout.cellSectionInset.right
+        let cellTotalSpace = itemSpacing + sectionSpacing
+        let cellWidth = (collectionView.bounds.width - cellTotalSpace) / layout.cellsInRow
+
+        return CGSize(width: cellWidth, height: cellWidth)
     }
 }

@@ -31,4 +31,4 @@
 "Home.Request.Path.search" = "search";
 "Home.Request.Parameter.search" = "q";
 "Home.Collection.DefaultCell.identifier" = "HomeCollectionDefaultCell";
-"Home.View.title" = "Search Restaurants";
+"Home.View.title" = "List of Restaurants";

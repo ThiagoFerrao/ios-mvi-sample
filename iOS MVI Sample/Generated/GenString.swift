@@ -72,7 +72,7 @@ internal enum GenString {
       }
     }
     internal enum View {
-      /// Search Restaurants
+      /// List of Restaurants
       internal static let title = GenString.tr("Base", "Home.View.title")
     }
   }

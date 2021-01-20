@@ -13,3 +13,11 @@ xcassets:
       output: Generated/GenAsset.swift
       params:
         enumName: GenAsset
+
+colors:
+  inputs: Resources/Colors/Colors.txt
+  outputs:
+    - templateName: swift5
+      output: Generated/GenColor.swift
+      params:
+        enumName: GenColor

@@ -2,7 +2,11 @@ import UIKit
 
 private struct Layout {
     let screenMargin: CGFloat = 10
+    let contentCornerRadius: CGFloat = 10
+    let contentBorderWidth: CGFloat = 2
     let labelMargin: CGFloat = 4
+    let labelNumberOfLines = 2
+    let labelScaleFactor: CGFloat = 0.8
 }
 
 final class HomeCollectionViewCell: UICollectionViewCell {
@@ -52,11 +56,19 @@ final class HomeCollectionViewCell: UICollectionViewCell {
     }
 
     private func configureViews() {
+        contentView.layer.cornerRadius = layout.contentCornerRadius
+        contentView.layer.borderWidth = layout.contentBorderWidth
+        contentView.layer.borderColor = GenColor.black.color.cgColor
+        contentView.backgroundColor = GenColor.blue.color
+
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
 
         [nameLabel, addressLabel, cuisinesLabel, timingsLabel].forEach { cellLabel in
             cellLabel.textAlignment = .center
+            cellLabel.numberOfLines = layout.labelNumberOfLines
+            cellLabel.adjustsFontSizeToFitWidth = true
+            cellLabel.minimumScaleFactor = layout.labelScaleFactor
         }
     }
 
