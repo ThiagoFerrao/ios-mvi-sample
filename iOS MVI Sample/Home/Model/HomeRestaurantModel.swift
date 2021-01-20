@@ -10,7 +10,9 @@ struct HomeRestaurantModel: Equatable, Decodable {
     let address: String
     let cuisines: String
     let timings: String
+}
 
+extension HomeRestaurantModel {
     enum CodingKeys: String, CodingKey {
         case restaurant
     }

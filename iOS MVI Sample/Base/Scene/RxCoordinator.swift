@@ -1,37 +1,37 @@
 import UIKit
 
 protocol RxCoordinating: class {
-    var viewController: UIViewController? { get set }
+    var presentableViewController: PresentableViewController? { get set }
 
-    func present(_ viewController: UIViewController)
+    func present(_ viewController: UIViewController, completion: (() -> Void)?)
+    func dismiss(completion: (() -> Void)?)
     func push(_ viewController: UIViewController)
-    func dismiss()
     func pop()
 }
 
 extension RxCoordinating {
 
-    func present(_ viewControllerToPresent: UIViewController) {
+    func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
         execute { [weak self] in
-            self?.viewController?.present(viewControllerToPresent, animated: true, completion: nil)
+            self?.presentableViewController?.present(viewControllerToPresent, animated: true, completion: completion)
         }
     }
 
-    func dismiss() {
+    func dismiss(completion: (() -> Void)? = nil) {
         execute { [weak self] in
-            self?.viewController?.dismiss(animated: true, completion: nil)
+            self?.presentableViewController?.dismiss(animated: true, completion: completion)
         }
     }
 
     func push(_ viewControllerToPush: UIViewController) {
         execute { [weak self] in
-            self?.viewController?.navigationController?.pushViewController(viewControllerToPush, animated: true)
+            self?.presentableViewController?.push(viewControllerToPush, animated: true)
         }
     }
 
     func pop() {
         execute { [weak self] in
-            self?.viewController?.navigationController?.popViewController(animated: true)
+            self?.presentableViewController?.pop(animated: true)
         }
     }
 

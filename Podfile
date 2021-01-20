@@ -14,7 +14,6 @@ target 'iOS MVI Sample' do
   target 'iOS MVI SampleTests' do
     inherit! :search_paths
 
-    pod 'RxBlocking'
     pod 'RxTest'
   end
 end

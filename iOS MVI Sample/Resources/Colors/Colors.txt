@@ -3,3 +3,4 @@
 GroupedBackground       : #f2f2f7ff
 Black                   : #000000ff
 Blue                    : #007affff
+Indigo                  : #a3b86cff

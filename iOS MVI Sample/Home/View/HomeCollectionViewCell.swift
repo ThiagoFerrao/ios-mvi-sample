@@ -59,7 +59,7 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = layout.contentCornerRadius
         contentView.layer.borderWidth = layout.contentBorderWidth
         contentView.layer.borderColor = GenColor.black.color.cgColor
-        contentView.backgroundColor = GenColor.blue.color
+        contentView.backgroundColor = GenColor.indigo.color
 
         stackView.axis = .vertical
         stackView.distribution = .fillEqually

@@ -29,12 +29,15 @@ final class HomeDataUseCase: HomeDataUseCasing {
         return dataResult.asObservable()
             .map {
                 guard $0.isEmpty else { return .updateData($0) }
-                throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: -1))
+                throw NetworkError(
+                    afError: AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: -1)),
+                    jsonData: nil
+                )
             }
             .retryWhen { errorObservable in
                 return errorObservable.flatMap { [weak self] error -> Observable<Void> in
                     guard let self = self else { return .error(error) }
-                    let requestError = RequestError(statusCode: error.asAFError?.responseCode)
+                    let requestError = RequestError(statusCode: error.asNetworkError?.afError.responseCode)
                     return self.coordinator.presentAlert(with: requestError.alertViewModel)
                         .map {
                             guard $0 == .retry else { throw error }
@@ -66,7 +69,7 @@ extension HomeDataUseCase {
 }
 
 extension HomeDataUseCase.RequestError {
-    var alertViewModel: UIAlertController.ViewModel<AlertReponse> {
+    var alertViewModel: UIAlertController.ViewModel<HomeCoordinator.AlertReponse> {
         switch self {
         case .emptyResponse:
             return .init(
@@ -84,7 +87,6 @@ extension HomeDataUseCase.RequestError {
                 message: GenString.Alert.Message.userKeyError,
                 style: .alert,
                 actions: [
-                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry),
                     .init(title: GenString.Alert.Action.close, style: .cancel, response: .close)
                 ]
             )
@@ -100,10 +102,5 @@ extension HomeDataUseCase.RequestError {
                 ]
             )
         }
-    }
-
-    enum AlertReponse {
-        case retry
-        case close
     }
 }

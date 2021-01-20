@@ -43,6 +43,8 @@ internal enum GenString {
 
   internal enum Development {
     internal enum Assertion {
+      /// Unable to retrive file data inside bundle
+      internal static let bundleFileNotFound = GenString.tr("Base", "Development.Assertion.bundleFileNotFound")
       /// init has not been implemented
       internal static let initUnimplemented = GenString.tr("Base", "Development.Assertion.initUnimplemented")
       /// This method must be overridden

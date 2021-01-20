@@ -3,10 +3,13 @@ import Alamofire
 import RxSwift
 
 protocol Networking {
+    func request(with networkRequest: NetworkRequest) -> Single<Void>
     func request<T: Decodable>(with networkRequest: NetworkRequest) -> Single<T>
 }
 
 final class Network: Networking {
+
+    private init() { }
 
     static let shared = Network()
 
@@ -24,11 +27,21 @@ final class Network: Networking {
         }
     }
 
+    func request(with networkRequest: NetworkRequest) -> Single<Void> {
+        return session.rx.request(with: networkRequest)
+            .map { _ in () }
+    }
+
     func request<T: Decodable>(with networkRequest: NetworkRequest) -> Single<T> {
         return session.rx.request(with: networkRequest)
             .map { data in
-                let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
-                return try JSONDecoder().decode(T.self, from: jsonData)
+                guard let resultData = data else {
+                    throw NetworkError(
+                        afError: .responseSerializationFailed(reason: .inputFileNil),
+                        jsonData: nil
+                    )
+                }
+                return try JSONDecoder().decode(T.self, from: resultData)
             }
     }
 }
@@ -37,7 +50,7 @@ extension Session: ReactiveCompatible { }
 
 extension Reactive where Base: Session {
 
-    func request(with networkRequest: NetworkRequest) -> Single<Any> {
+    func request(with networkRequest: NetworkRequest) -> Single<Data?> {
 
         return .create(subscribe: { singleObserver -> Disposable in
             let request = base.request(
@@ -50,11 +63,12 @@ extension Reactive where Base: Session {
             .validate()
             .responseJSON { response in
                 switch response.result {
-                case let .success(data):
-                    singleObserver(.success(data))
+                case .success:
+                    singleObserver(.success(response.data))
 
                 case let .failure(error):
-                    singleObserver(.error(error))
+                    let networkError = NetworkError(afError: error, jsonData: response.data)
+                    singleObserver(.error(networkError))
                 }
             }
 

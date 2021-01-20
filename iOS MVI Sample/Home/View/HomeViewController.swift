@@ -63,7 +63,7 @@ final class HomeViewController: RxView<HomePresenter, HomeInteractor> {
         searchBar.placeholder = GenString.Home.View.searchPlaceholder
 
         loadingIndicator.style = .large
-        loadingIndicator.tintColor = GenColor.black.color
+        loadingIndicator.color = GenColor.black.color
         loadingIndicator.hidesWhenStopped = true
     }
 

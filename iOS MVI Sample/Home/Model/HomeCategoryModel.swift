@@ -4,10 +4,12 @@ struct HomeCategoriesModel: Decodable {
     let categories: [HomeCategoryModel]
 }
 
-struct HomeCategoryModel: Decodable {
+struct HomeCategoryModel: Equatable, Decodable {
     let id: Int
     let name: String
+}
 
+extension HomeCategoryModel {
     enum CodingKeys: String, CodingKey {
         case categories
     }

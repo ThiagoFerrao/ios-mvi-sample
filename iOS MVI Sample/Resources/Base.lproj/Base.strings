@@ -15,6 +15,7 @@
 
 "Development.Assertion.initUnimplemented" = "init has not been implemented";
 "Development.Assertion.mustOverrideMethod" = "This method must be overridden";
+"Development.Assertion.bundleFileNotFound" = "Unable to retrive file data inside bundle";
 "Development.Test.Path.environment" = "XCTestConfigurationFilePath";
 
 // Alert

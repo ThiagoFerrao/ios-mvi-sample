@@ -10,7 +10,9 @@ protocol HomeDataFetching {
 }
 
 protocol HomeCoordinating: RxCoordinating {
-    func presentAlert<Response>(with viewModel: UIAlertController.ViewModel<Response>) -> Observable<Response>
+    func presentAlert(
+        with viewModel: UIAlertController.ViewModel<HomeCoordinator.AlertReponse>
+    ) -> Observable<HomeCoordinator.AlertReponse>
 }
 
 typealias HomeDataUseCasing = RxUseCase<HomeDataUseCase.RequestType, HomeMutation>

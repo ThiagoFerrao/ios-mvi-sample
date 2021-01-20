@@ -17,7 +17,7 @@ protocol RxViewing {
     func configure(with viewModel: ViewModel)
 }
 
-class RxView<Presenter: RxPresenting, Interactor: RxInteracting>: UIViewController, RxViewing {
+class RxView<Presenter: RxPresenting, Interactor: RxInteracting>: UIViewController, PresentableViewController, RxViewing {
     typealias Command = Interactor.Command
     typealias ViewModel = Presenter.ViewModel
 

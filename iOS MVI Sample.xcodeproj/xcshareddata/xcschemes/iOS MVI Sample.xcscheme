@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,16 +36,6 @@
                BlueprintIdentifier = "909A793125869164008E444D"
                BuildableName = "iOS MVI SampleTests.xctest"
                BlueprintName = "iOS MVI SampleTests"
-               ReferencedContainer = "container:iOS MVI Sample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "909A793C25869164008E444D"
-               BuildableName = "iOS MVI SampleUITests.xctest"
-               BlueprintName = "iOS MVI SampleUITests"
                ReferencedContainer = "container:iOS MVI Sample.xcodeproj">
             </BuildableReference>
          </TestableReference>

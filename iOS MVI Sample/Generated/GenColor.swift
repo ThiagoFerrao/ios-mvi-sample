@@ -27,6 +27,9 @@ internal struct GenColor {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f2f2f7"></span>
   /// Alpha: 100% <br/> (0xf2f2f7ff)
   internal static let groupedBackground = GenColor(rgbaValue: 0xf2f2f7ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#a3b86c"></span>
+  /// Alpha: 100% <br/> (0xa3b86cff)
+  internal static let indigo = GenColor(rgbaValue: 0xa3b86cff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

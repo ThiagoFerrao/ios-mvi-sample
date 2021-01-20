@@ -8,6 +8,6 @@ struct HomeViewModel: Equatable {
 extension HomeViewModel {
     init(state: HomeState) {
         self.isLoading = state.isLoading
-        self.restaurants = state.restaurantsData
+        self.restaurants = state.restaurantsData ?? []
     }
 }

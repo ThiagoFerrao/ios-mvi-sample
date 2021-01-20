@@ -32,7 +32,7 @@ final class HomeFactory: HomeFactoring {
             return presenter.outputViewModel
         }
 
-        coordinator.viewController = viewController
+        coordinator.presentableViewController = viewController
 
         return viewController
     }

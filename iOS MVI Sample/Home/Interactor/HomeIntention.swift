@@ -5,23 +5,18 @@ enum HomeCommand {
     case searchValue(String?)
 }
 
-enum HomeMutation {
+enum HomeMutation: Equatable {
     case showLoading(Bool)
     case updateData([HomeRestaurantModel])
 }
 
-struct HomeState {
+struct HomeState: Equatable {
     var isLoading: Bool
-    var searchTerm: String?
-    var restaurantsData: [HomeRestaurantModel]
+    var restaurantsData: [HomeRestaurantModel]?
 }
 
 extension HomeState {
     static var initialState: HomeState {
-        return .init(
-            isLoading: true,
-            searchTerm: nil,
-            restaurantsData: []
-        )
+        return .init(isLoading: true, restaurantsData: nil)
     }
 }
