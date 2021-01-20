@@ -33,8 +33,8 @@ final class HomeInteractor: HomeInteracting {
         var newState = state
 
         switch mutation {
-        case .startLoading:
-            newState.isLoading = true
+        case let .showLoading(isLoading):
+            newState.isLoading = isLoading
 
         case let .updateData(newData):
             newState.isLoading = false

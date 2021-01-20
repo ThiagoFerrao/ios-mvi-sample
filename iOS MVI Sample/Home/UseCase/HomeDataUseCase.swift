@@ -27,21 +27,23 @@ final class HomeDataUseCase: HomeDataUseCasing {
         }
 
         return dataResult.asObservable()
-            .do(onNext: { [weak self] in
-                guard let self = self, $0.isEmpty else { return }
-                _ = self.coordinator.presentAlert(with: RequestError.emptyResponse.alertViewModel)
-            })
-            .map { .updateData($0) }
+            .map {
+                guard $0.isEmpty else { return .updateData($0) }
+                throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: -1))
+            }
             .retryWhen { errorObservable in
                 return errorObservable.flatMap { [weak self] error -> Observable<Void> in
-                    guard let self = self else { return .empty() }
+                    guard let self = self else { return .error(error) }
                     let requestError = RequestError(statusCode: error.asAFError?.responseCode)
                     return self.coordinator.presentAlert(with: requestError.alertViewModel)
-                        .filter { $0 == .retry }
-                        .map { _ in () }
+                        .map {
+                            guard $0 == .retry else { throw error }
+                            return ()
+                        }
                 }
             }
-            .startWith(.startLoading)
+            .catchErrorJustReturn(.showLoading(false))
+            .startWith(.showLoading(true))
     }
 }
 
@@ -52,9 +54,9 @@ extension HomeDataUseCase {
     }
 
     enum RequestError: Int {
+        case emptyResponse = -1
         case forbidden = 403
         case general
-        case emptyResponse
 
         init(statusCode: Int?) {
             let code = statusCode ?? 0
@@ -66,13 +68,24 @@ extension HomeDataUseCase {
 extension HomeDataUseCase.RequestError {
     var alertViewModel: UIAlertController.ViewModel<AlertReponse> {
         switch self {
+        case .emptyResponse:
+            return .init(
+                title: GenString.Alert.Title.emptyResponse,
+                message: GenString.Alert.Message.emptyResponse,
+                style: .alert,
+                actions: [
+                    .init(title: GenString.Alert.Action.close, style: .cancel, response: .close)
+                ]
+            )
+
         case .forbidden:
             return .init(
                 title: GenString.Alert.Title.error,
                 message: GenString.Alert.Message.userKeyError,
                 style: .alert,
                 actions: [
-                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry)
+                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry),
+                    .init(title: GenString.Alert.Action.close, style: .cancel, response: .close)
                 ]
             )
 
@@ -82,17 +95,8 @@ extension HomeDataUseCase.RequestError {
                 message: GenString.Alert.Message.defaultError,
                 style: .alert,
                 actions: [
-                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry)
-                ]
-            )
-
-        case .emptyResponse:
-            return .init(
-                title: GenString.Alert.Title.emptyResponse,
-                message: GenString.Alert.Message.emptyResponse,
-                style: .alert,
-                actions: [
-                    .init(title: GenString.Alert.Action.close, style: .default, response: .close)
+                    .init(title: GenString.Alert.Action.retry, style: .default, response: .retry),
+                    .init(title: GenString.Alert.Action.close, style: .cancel, response: .close)
                 ]
             )
         }

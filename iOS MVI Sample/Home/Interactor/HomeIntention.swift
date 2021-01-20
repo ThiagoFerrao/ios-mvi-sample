@@ -6,7 +6,7 @@ enum HomeCommand {
 }
 
 enum HomeMutation {
-    case startLoading
+    case showLoading(Bool)
     case updateData([HomeRestaurantModel])
 }
 
