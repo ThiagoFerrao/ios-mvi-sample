@@ -6,7 +6,7 @@ protocol HomeDataFetching {
 
     func fetchAllCategories() -> Single<[HomeCategoryModel]>
     func fetchAllRestaurants() -> Single<[HomeRestaurantModel]>
-    func fetchSearchedRestaurants(searchValue: String) -> Single<[HomeRestaurantModel]>
+    func fetchSearchedRestaurants(searchValue: String?) -> Single<[HomeRestaurantModel]>
 }
 
 protocol HomeCoordinating: RxCoordinating {

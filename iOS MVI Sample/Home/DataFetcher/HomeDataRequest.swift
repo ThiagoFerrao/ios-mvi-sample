@@ -3,34 +3,33 @@ import Alamofire
 
 enum HomeDataRequest: NetworkRequest {
     case allCategories
-    case allRestaurants
-    case searchRestaurants(searchValue: String)
+    case searchRestaurants(searchValue: String?)
 
     var path: String {
         switch self {
         case .allCategories:
             return GenString.Home.Request.Path.categories
 
-        case .allRestaurants, .searchRestaurants:
+        case .searchRestaurants:
             return GenString.Home.Request.Path.search
         }
     }
 
     var parameters: [String : Any]? {
         switch self {
-        case .allCategories, .allRestaurants:
-            return nil
-
-        case let .searchRestaurants(searchValue):
+        case let .searchRestaurants(.some(searchValue)):
             return [
                 GenString.Home.Request.Parameter.search : searchValue
             ]
+
+        case .allCategories, .searchRestaurants:
+            return nil
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .allCategories, .allRestaurants, .searchRestaurants:
+        case .allCategories, .searchRestaurants:
             return .get
         }
     }

@@ -2,7 +2,7 @@ import Foundation
 
 enum HomeCommand {
     case loadData
-    case searchValue(String)
+    case searchValue(String?)
 }
 
 enum HomeMutation {

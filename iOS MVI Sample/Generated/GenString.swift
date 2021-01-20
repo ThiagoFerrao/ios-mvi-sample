@@ -21,10 +21,14 @@ internal enum GenString {
     internal enum Message {
       /// An error during the data request happened. \nPlease, try again later
       internal static let defaultError = GenString.tr("Base", "Alert.Message.defaultError")
+      /// Cannot find the restaurant that you are searching for
+      internal static let emptyResponse = GenString.tr("Base", "Alert.Message.emptyResponse")
       /// An user Key is needed to use the Zomato API. \nGenerate one in the Zomato website and add it in the Base.strings before running the app
       internal static let userKeyError = GenString.tr("Base", "Alert.Message.userKeyError")
     }
     internal enum Title {
+      /// No results found
+      internal static let emptyResponse = GenString.tr("Base", "Alert.Title.emptyResponse")
       /// Unable to Retrieve Data
       internal static let error = GenString.tr("Base", "Alert.Title.error")
     }
@@ -72,6 +76,8 @@ internal enum GenString {
       }
     }
     internal enum View {
+      /// Search for restaurant, cuisine or a dish
+      internal static let searchPlaceholder = GenString.tr("Base", "Home.View.searchPlaceholder")
       /// List of Restaurants
       internal static let title = GenString.tr("Base", "Home.View.title")
     }

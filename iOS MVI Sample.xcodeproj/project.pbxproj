@@ -26,6 +26,7 @@
 		90645694258AF2F800D2117B /* GenString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90645692258AF2F800D2117B /* GenString.swift */; };
 		908E48BC25B84F0100FB1F7B /* GenColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908E48BB25B84F0100FB1F7B /* GenColor.swift */; };
 		908E48C125B84F2300FB1F7B /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 908E48C025B84F2200FB1F7B /* Colors.txt */; };
+		908E48C725B862E400FB1F7B /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908E48C625B862E400FB1F7B /* UISearchBarExtension.swift */; };
 		909A792025869163008E444D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A791F25869163008E444D /* AppDelegate.swift */; };
 		909A792225869163008E444D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A792125869163008E444D /* SceneDelegate.swift */; };
 		909A792425869163008E444D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A792325869163008E444D /* HomeViewController.swift */; };
@@ -85,6 +86,7 @@
 		90645692258AF2F800D2117B /* GenString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenString.swift; sourceTree = "<group>"; };
 		908E48BB25B84F0100FB1F7B /* GenColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenColor.swift; sourceTree = "<group>"; };
 		908E48C025B84F2200FB1F7B /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		908E48C625B862E400FB1F7B /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
 		909A791C25869163008E444D /* iOS MVI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909A791F25869163008E444D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		909A792125869163008E444D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				90B8BC9925B716FE006CC85C /* AppScheduler.swift */,
 				90FA4F3825A26A5C00B850B5 /* AlertExtension.swift */,
 				9002BCBC2587DDE900A3649F /* OptionalExtension.swift */,
+				908E48C625B862E400FB1F7B /* UISearchBarExtension.swift */,
 				90B8BCAE25B75CF1006CC85C /* UIViewExtension.swift */,
 			);
 			path = Util;
@@ -598,6 +601,7 @@
 				90B05F562586B52700BDAD3A /* HomeFactory.swift in Sources */,
 				90481EA6258EA744009CB6E6 /* HomeRestaurantModel.swift in Sources */,
 				90B8BC9A25B716FE006CC85C /* AppScheduler.swift in Sources */,
+				908E48C725B862E400FB1F7B /* UISearchBarExtension.swift in Sources */,
 				90481EAD258EB3E4009CB6E6 /* HomeContract.swift in Sources */,
 				90B05F7C2586B73000BDAD3A /* RxCoordinator.swift in Sources */,
 				90481E9B258E9510009CB6E6 /* HomeDataRequest.swift in Sources */,

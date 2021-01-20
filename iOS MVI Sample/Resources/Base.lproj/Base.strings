@@ -20,8 +20,10 @@
 // Alert
 
 "Alert.Title.error" = "Unable to Retrieve Data";
+"Alert.Title.emptyResponse" = "No results found";
 "Alert.Message.userKeyError" = "An user Key is needed to use the Zomato API. \nGenerate one in the Zomato website and add it in the Base.strings before running the app";
 "Alert.Message.defaultError" = "An error during the data request happened. \nPlease, try again later";
+"Alert.Message.emptyResponse" = "Cannot find the restaurant that you are searching for";
 "Alert.Action.retry" = "Retry";
 "Alert.Action.close" = "Close";
 
@@ -32,3 +34,4 @@
 "Home.Request.Parameter.search" = "q";
 "Home.Collection.DefaultCell.identifier" = "HomeCollectionDefaultCell";
 "Home.View.title" = "List of Restaurants";
+"Home.View.searchPlaceholder" = "Search for restaurant, cuisine or a dish";

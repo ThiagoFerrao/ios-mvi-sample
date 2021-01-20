@@ -1,4 +1,5 @@
 import Foundation
+import Alamofire
 import RxSwift
 
 final class HomeDataUseCase: HomeDataUseCasing {
@@ -26,9 +27,14 @@ final class HomeDataUseCase: HomeDataUseCasing {
         }
 
         return dataResult.asObservable()
+            .do(onNext: { [weak self] in
+                guard let self = self, $0.isEmpty else { return }
+                _ = self.coordinator.presentAlert(with: RequestError.emptyResponse.alertViewModel)
+            })
             .map { .updateData($0) }
             .retryWhen { errorObservable in
-                return errorObservable.flatMap { error -> Observable<Void> in
+                return errorObservable.flatMap { [weak self] error -> Observable<Void> in
+                    guard let self = self else { return .empty() }
                     let requestError = RequestError(statusCode: error.asAFError?.responseCode)
                     return self.coordinator.presentAlert(with: requestError.alertViewModel)
                         .filter { $0 == .retry }
@@ -42,12 +48,13 @@ final class HomeDataUseCase: HomeDataUseCasing {
 extension HomeDataUseCase {
     enum RequestType {
         case allRestaurants
-        case searchedRestaurants(searchValue: String)
+        case searchedRestaurants(searchValue: String?)
     }
 
     enum RequestError: Int {
         case forbidden = 403
         case general
+        case emptyResponse
 
         init(statusCode: Int?) {
             let code = statusCode ?? 0
@@ -76,6 +83,16 @@ extension HomeDataUseCase.RequestError {
                 style: .alert,
                 actions: [
                     .init(title: GenString.Alert.Action.retry, style: .default, response: .retry)
+                ]
+            )
+
+        case .emptyResponse:
+            return .init(
+                title: GenString.Alert.Title.emptyResponse,
+                message: GenString.Alert.Message.emptyResponse,
+                style: .alert,
+                actions: [
+                    .init(title: GenString.Alert.Action.close, style: .default, response: .close)
                 ]
             )
         }
